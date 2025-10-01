@@ -14,16 +14,14 @@ import {
   YAxis, 
   CartesianGrid, 
   Tooltip, 
-  Legend, 
   ResponsiveContainer,
   PieChart,
   Pie,
-  Cell,
-  ScatterChart,
-  Scatter
+  Cell
 } from "recharts";
 import { ArrowLeft, TrendingUp, Brain, Heart, Target } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface EmbodimentData {
   date: string;
@@ -74,7 +72,7 @@ export default function Analytics() {
 
   useEffect(() => {
     fetchAnalyticsData();
-  }, [dateRange]);
+  }, [dateRange]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchAnalyticsData = async () => {
     setLoading(true);
@@ -185,12 +183,12 @@ export default function Analytics() {
     }
   };
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: Array<{ color: string; name: string; value: number }>; label?: string }) => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-slate-800 border border-slate-600 rounded-lg p-3">
           <p className="text-slate-300">{label}</p>
-          {payload.map((entry: any, index: number) => (
+          {payload.map((entry: { color: string; name: string; value: number }, index: number) => (
             <p key={index} style={{ color: entry.color }}>
               {entry.name}: {entry.value}
             </p>

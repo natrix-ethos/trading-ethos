@@ -58,7 +58,7 @@ export default function TradeEntry() {
     },
   });
 
-  const { watch, setValue } = form;
+  const { watch } = form;
   const watchedValues = watch();
 
   // Auto-calculate P&L
@@ -70,7 +70,7 @@ export default function TradeEntry() {
     } else {
       setPnl(0);
     }
-  }, [watchedValues.entryPrice, watchedValues.exitPrice, watchedValues.positionSize]);
+  }, [watchedValues.entryPrice, watchedValues.exitPrice, watchedValues.positionSize]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Update timestamp every minute
   useEffect(() => {

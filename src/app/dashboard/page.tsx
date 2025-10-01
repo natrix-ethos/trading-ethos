@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { DashboardCard } from "@/components/DashboardCard";
 import { StreakCounter } from "@/components/StreakCounter";
 import { EmbodimentScore } from "@/components/EmbodimentScore";
-import { Sun, TrendingUp, Moon, Target, Zap } from "lucide-react";
+import { Sun, TrendingUp, Moon } from "lucide-react";
 
 export default function Dashboard() {
   const currentDate = new Date().toLocaleDateString('en-US', {
