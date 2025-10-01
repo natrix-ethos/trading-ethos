@@ -26,24 +26,28 @@ import { Button } from "@/components/ui/button";
 interface EmbodimentData {
   date: string;
   score: number;
+  [key: string]: string | number;
 }
 
 interface TradePerformanceData {
   identity: string;
   avgPnl: number;
   tradeCount: number;
+  [key: string]: string | number;
 }
 
 interface EmotionalStateData {
   state: string;
   count: number;
   percentage: number;
+  [key: string]: string | number;
 }
 
 interface NervousSystemData {
   state: string;
   winRate: number;
   totalTrades: number;
+  [key: string]: string | number;
 }
 
 const dateRanges = [
