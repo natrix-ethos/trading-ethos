@@ -365,7 +365,7 @@ export default function Analytics() {
                         cx="50%"
                         cy="50%"
                         labelLine={false}
-                        label={({ state, percentage }) => `${state}: ${percentage.toFixed(1)}%`}
+                        label={({ state, percentage }) => `${state}: ${(percentage as any).toFixed(1)}%`}
                         outerRadius={120}
                         fill="#8884d8"
                         dataKey="count"
